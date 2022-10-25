@@ -40,12 +40,17 @@ img {
   background-color: orange;
   display: block;
   margin: 0 auto;
-  min-width: 150px;
+  width: 150px;
   height: 150px;
 }
 
 #cards {
+  width: 85%;
+  margin: 0 auto;
+  padding: 1.5rem;
+  gap: 10px;
   display: flex;
-  gap: 20px;
   flex-wrap: wrap;
+  justify-content: space-between;
+  align-content: flex-start;
 }
