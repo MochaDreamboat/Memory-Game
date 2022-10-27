@@ -10,7 +10,7 @@ function App() {
     if (score > bestScore) {
       setBestScore(score);
     }
-  }, [score]);
+  }, [score, bestScore]);
 
   return (
     <main>
