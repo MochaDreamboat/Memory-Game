@@ -1,10 +1,12 @@
 import {React, useEffect, useState } from 'react';
+import Card from "./components/Card.js";
+import deck from "./decks/overwatchDeck.js";
 
 function App() {
 
   let [score, setScore] = useState(0);
   let [bestScore, setBestScore] = useState(0);
-  let [cards, arrangeCards] = useState({});
+  let [cards, arrangeCards] = useState(deck);
 
   // Updates best score if current score exceeds best score.
   useEffect(() => {
@@ -22,30 +24,9 @@ function App() {
       </header>
       {/* TO-DO: Split draft into respective components */}
       <section id="cards">
-        {/* <div class="card">
-          <img src={require('./images/ashe.png')} alt="ashe" />
-          <h3>ASHE</h3>
-        </div>
-        <div class="card">
-          <img src={require('./images/ana.png')} alt="ana" />
-          <h3>ANA</h3>
-        </div>
-        <div class="card">
-          <img src={require('./images/baptiste.png')} alt="baptiste" />
-          <h3>BAPTISTE</h3>
-        </div>
-        <div class="card">
-          <img src={require('./images/bastion.png')} alt="bastion" />
-          <h3>BASTION</h3>
-        </div>
-        <div class="card">
-          <img src={require('./images/brigitte.png')} alt="brigitte" />
-          <h3>BRIGITTE</h3>
-        </div>
-        <div class="card">
-          <img src={require('./images/cassidy.png')} alt="cassidy" />
-          <h3>CASSIDY</h3>
-        </div> */}
+        {Object.keys(cards).map((card) => {
+          return <Card card={cards[card]} />
+        })}
       </section>
     </main>
   );
