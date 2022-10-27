@@ -1,9 +1,23 @@
+import {React, useEffect, useState } from 'react';
+
 function App() {
+
+  let [score, setScore] = useState(0);
+  let [bestScore, setBestScore] = useState(0);
+
+  // Updates best score if current score exceeds best score.
+  useEffect(() => {
+    if (score > bestScore) {
+      setBestScore(score);
+    }
+  }, [score]);
+
   return (
     <main>
       <header>
         <h1>MEMORY GAME</h1>
         <p>Don't click a card more than once!</p>
+        <p>SCORE: {score}</p>
       </header>
       {/* TO-DO: Split draft into respective components */}
       <section id="cards">
