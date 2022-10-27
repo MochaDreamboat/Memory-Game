@@ -4,6 +4,7 @@ function App() {
 
   let [score, setScore] = useState(0);
   let [bestScore, setBestScore] = useState(0);
+  let [cards, arrangeCards] = useState({});
 
   // Updates best score if current score exceeds best score.
   useEffect(() => {
@@ -21,7 +22,7 @@ function App() {
       </header>
       {/* TO-DO: Split draft into respective components */}
       <section id="cards">
-        <div class="card">
+        {/* <div class="card">
           <img src={require('./images/ashe.png')} alt="ashe" />
           <h3>ASHE</h3>
         </div>
@@ -44,7 +45,7 @@ function App() {
         <div class="card">
           <img src={require('./images/cassidy.png')} alt="cassidy" />
           <h3>CASSIDY</h3>
-        </div>
+        </div> */}
       </section>
     </main>
   );
