@@ -35,6 +35,9 @@ img, .card {
   background-color: grey;
   text-align: center;
 }
+.card:hover {
+  cursor: pointer;
+}
 
 img {
   background-color: orange;
