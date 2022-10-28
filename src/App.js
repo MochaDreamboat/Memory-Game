@@ -6,7 +6,7 @@ function App() {
 
   let [score, setScore] = useState(0);
   let [bestScore, setBestScore] = useState(0);
-  let [cards, arrangeCards] = useState(deck);
+  let [cards, modifyCards] = useState(deck);
 
   // Updates best score if current score exceeds best score.
   useEffect(() => {
@@ -14,6 +14,32 @@ function App() {
       setBestScore(score);
     }
   }, [score, bestScore]);
+
+  const selectCard = (card) => {
+    if (cards[card].picked == true) {
+      setScore(0);
+      // Needs to shuffle here
+      return
+    }
+    setScore(score + 1);
+    modifyCards({
+      ...cards,
+      [card]: {
+        ...cards[card],
+        picked: true
+      }
+    })
+    // Shuffle should happen here too
+  };
+
+  // Incorporate via Fisher-Yates
+  const shuffle = () => {
+
+  };
+
+  const resetCards = () => {
+
+  }
 
   return (
     <main>
@@ -25,7 +51,7 @@ function App() {
       {/* TO-DO: Split draft into respective components */}
       <section id="cards">
         {Object.keys(cards).map((card) => {
-          return <Card card={cards[card]} key={card} />
+          return <Card card={cards[card]} key={card} select={() => selectCard(card)} />
         })}
       </section>
     </main>
