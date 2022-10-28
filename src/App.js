@@ -25,7 +25,7 @@ function App() {
       {/* TO-DO: Split draft into respective components */}
       <section id="cards">
         {Object.keys(cards).map((card) => {
-          return <Card card={cards[card]} />
+          return <Card card={cards[card]} key={card} />
         })}
       </section>
     </main>
