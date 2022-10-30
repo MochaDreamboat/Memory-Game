@@ -34,7 +34,7 @@ function App() {
 
   // Incorporate via Fisher-Yates
   const shuffle = () => {
-
+    
   };
 
   const resetCards = () => {
@@ -47,6 +47,7 @@ function App() {
         <h1>MEMORY GAME</h1>
         <p>Don't click a card more than once!</p>
         <p>SCORE: {score}</p>
+        <p>BEST SCORE: {bestScore}</p>
       </header>
       {/* TO-DO: Split draft into respective components */}
       <section id="cards">
