@@ -44,21 +44,25 @@ function App() {
 
   const selectCard = (card) => {
     if (cards[card].picked === true) {
+      console.log(cards[card].picked);
       setScore(0);
-      return;
+      resetCards();
+      return
     }
     setScore(score + 1);
     modifyCards({
       ...cards,
       [card]: {
         ...cards[card],
-        picked: true,
+        picked: true
       },
     });
   };
 
   // Must reset every card in deck to unpicked.
-  const resetCards = () => {};
+  const resetCards = () => {
+    modifyCards({...deck});
+  };
 
   return (
     <main>
