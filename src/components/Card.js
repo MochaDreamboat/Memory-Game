@@ -1,4 +1,4 @@
-import { React, useState } from "react";
+import { React } from "react";
 
 // Takes in card info from cards data structure (array?) and renders w/ event listeners on it.
 function Card (props) {
