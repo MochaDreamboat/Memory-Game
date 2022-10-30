@@ -18,7 +18,7 @@ function App() {
   }, [score, bestScore]);
 
   const selectCard = (card) => {
-    if (cards[card].picked == true) {
+    if (cards[card].picked === true) {
       setScore(0);
       // Needs to shuffle here
       return
@@ -36,13 +36,19 @@ function App() {
 
   // Incorporate via Fisher-Yates
   const shuffle = () => {
-    
+    for (let i = 0; i < deckKeys.length - 2; i++) {
+      let j = Math.floor(Math.random() * (deckKeys.length - i) + i) // Generate random integer between and including in and j.
+      let cardOne = deckKeys[i];
+      let cardTwo = deckKeys[j];
+
+      deckKeys[i] = cardTwo;
+      deckKeys[j] = cardOne;
+    }
   };
 
   const resetCards = () => {
 
   }
-
   return (
     <main>
       <header>
