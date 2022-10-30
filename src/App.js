@@ -8,6 +8,8 @@ function App() {
   let [bestScore, setBestScore] = useState(0);
   let [cards, modifyCards] = useState(deck);
 
+  const deckKeys = Object.keys(cards);
+
   // Updates best score if current score exceeds best score.
   useEffect(() => {
     if (score > bestScore) {
@@ -51,7 +53,7 @@ function App() {
       </header>
       {/* TO-DO: Split draft into respective components */}
       <section id="cards">
-        {Object.keys(cards).map((card) => {
+        {deckKeys.map((card) => {
           return <Card card={cards[card]} key={card} select={() => selectCard(card)} />
         })}
       </section>
