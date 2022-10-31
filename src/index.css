@@ -35,6 +35,7 @@ img, .card {
   background-color: grey;
   text-align: center;
 }
+
 .card:hover {
   cursor: pointer;
 }
@@ -49,11 +50,12 @@ img {
 
 #cards {
   width: 85%;
+  max-width: 950px;
   margin: 0 auto;
   padding: 1.5rem;
   gap: 15px;
   display: flex;
   flex-wrap: wrap;
-  justify-content: space-between;
+  justify-content: space-around;
   align-content: flex-start;
 }
